@@ -1,4 +1,0 @@
-{'nome': 'paulo', 'telefone': '1122-3344'}
-{'nome': 'carlos', 'telefone': '3344-5566'}
-{'nome': 'joel', 'telefone': '1234-5678'}
-{'nome': 'jessica', 'telefone': '8765-4321'}
