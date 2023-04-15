@@ -15,6 +15,21 @@ class Pessoas:
     def set_documents(self, document) -> None:
         return self.documents.append(document)
 
+    def create_empty_json(self):
+        arquivo = os_path.exists(path_file)
+        print(arquivo)
+        # if not os_path.exists(self.path_file):
+        #     with open(self.path_file, 'w') as arquivo:
+        #         arquivo.write(json.dumps([]))
+        #     print('>>>>>> criado.')
+                
+        # else:
+        #     print(f'The {self.path_file} file exists.')
+        
+        # if not os_path.isfile(self.path_file) :
+        #     with open(self.path_file, 'w', encoding=self.encoding) as arquivo:
+        #         json.dump(self.path_file, arquivo, ensure_ascii=False)
+
     def read_json(self) -> list:
 
         with open(self.path_file, "r", encoding=self.encoding) as arquivo:
@@ -49,8 +64,9 @@ if __name__ == "__main__":
                     "telefone": "(17) 99230-5614", "estado": "SP"}]
 
         pessoas = Pessoas(os_path.abspath("pessoas.json"), 'UTF-8')
-        pessoas.write_json(choice(telefones))
-        print(pessoas.get_documents())
+        pessoas.create_empty_json()
+        #pessoas.write_json(choice(telefones))
+        #print(pessoas.get_documents())
 
     except Exception as e:
         print("Erro:>>>>>>>>>>>>>>", e)
