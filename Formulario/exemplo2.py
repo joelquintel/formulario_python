@@ -1,5 +1,6 @@
 import json
 import os.path as os_path
+from tkinter import *
 from random import choice
 
 class Pessoas:
@@ -45,27 +46,45 @@ class Pessoas:
     def __str__(self) -> str:
         return f"Pessoas:{len(self.get_documents()):03}"
 
+listaCadastro = {}
+
+window = Tk()
+window.title("Cadastro")
+window.geometry('600x300')
+lbl = Label(window, text="Nome")
+lbl.grid(column=0, row=0)
+txtNome = Entry(window,width=10)
+txtNome.grid(column=1, row=0)
+#Telefone
+lbl2 = Label(window, text="Telefone")
+lbl2.grid(column=5, row=0)
+txtTel = Entry(window,width=10)
+txtTel.grid(column=7, row=0)
+
+def clicked():
+
+    nomeCd =  txtNome.get()
+    telefoneCd =  txtTel.get()
+
+    listaCadastro.update({"nome":nomeCd,"telefone":telefoneCd})
+
+btn = Button(window, text="Cadastrar", command=clicked)
+
+btn.grid(column=2, row=7)
+
+window.mainloop()    
 
 if __name__ == "__main__":
 
     try:
+        
 
-        telefones = [{"nome": "Isabela Simone Corte Real",
-                    "telefone": "(94) 98550-6067", "estado": "PA"},
-                    {"nome": "Nelson Ryan Gael Gomes",
-                    "telefone": "(21) 98770-7183", "estado": "RJ"},
-                    {"nome": "Raul Raimundo Mendes",
-                    "telefone": "(61) 98414-0874", "estado": "GO"},
-                    {"nome": "Lucas Geraldo Gael Pereira",
-                    "telefone": "(83) 98759-8468", "estado": "PB"},
-                    {"nome": "Juliana Analu Bruna Lima",
-                    "telefone": "(61) 98633-8604", "estado": "DF"},
-                    {"nome": "Davi Osvaldo Costa",
-                    "telefone": "(17) 99230-5614", "estado": "SP"}]
-
+       # telefones = [{"nome": "Isabela Simone Corte Real",
+                   # "telefone": "(94) 98550-6067", "estado": "PA"}]
+        
         pessoas = Pessoas(os_path.abspath("./pessoas.json"), 'UTF-8')
         pessoas.create_empty_json()
-        pessoas.write_json(telefones)
+        pessoas.write_json(listaCadastro)
         print(pessoas.get_documents())
 
     except Exception as e:
