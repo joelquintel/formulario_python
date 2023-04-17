@@ -16,7 +16,7 @@ class Pessoas:
         return self.documents.append(document)
 
     def create_empty_json(self):
-        arquivo = os_path.exists(path_file)
+        arquivo = os_path.exists(self.path_file)
         print(arquivo)
         # if not os_path.exists(self.path_file):
         #     with open(self.path_file, 'w') as arquivo:
@@ -32,7 +32,7 @@ class Pessoas:
 
     def read_json(self) -> list:
 
-        with open(self.path_file, "r", encoding=self.encoding) as arquivo:
+        with open(self.path_file, "r", encoding=self.encoding,) as arquivo:
             return json.loads(arquivo.read() or '[]')
 
     def write_json(self, data: dict) -> None:
@@ -40,7 +40,7 @@ class Pessoas:
         self.set_documents(data)
 
         with open(self.path_file, 'w', encoding=self.encoding) as arquivo:
-            json.dump(self.get_documents(), arquivo, ensure_ascii=False)
+            json.dump(self.get_documents(), arquivo, ensure_ascii=False,indent = 4)
 
     def __str__(self) -> str:
         return f"Pessoas:{len(self.get_documents()):03}"
@@ -63,10 +63,10 @@ if __name__ == "__main__":
                     {"nome": "Davi Osvaldo Costa",
                     "telefone": "(17) 99230-5614", "estado": "SP"}]
 
-        pessoas = Pessoas(os_path.abspath("pessoas.json"), 'UTF-8')
+        pessoas = Pessoas(os_path.abspath("./pessoas.json"), 'UTF-8')
         pessoas.create_empty_json()
-        #pessoas.write_json(choice(telefones))
-        #print(pessoas.get_documents())
+        pessoas.write_json(choice(telefones))
+        print(pessoas.get_documents())
 
     except Exception as e:
         print("Erro:>>>>>>>>>>>>>>", e)
