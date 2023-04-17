@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
         pessoas = Pessoas(os_path.abspath("./pessoas.json"), 'UTF-8')
         pessoas.create_empty_json()
-        pessoas.write_json(choice(telefones))
+        pessoas.write_json(telefones)
         print(pessoas.get_documents())
 
     except Exception as e:
