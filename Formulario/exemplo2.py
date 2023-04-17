@@ -50,7 +50,7 @@ listaCadastro = {}
 
 window = Tk()
 window.title("Cadastro")
-window.geometry('600x300')
+window.geometry('600x400')
 lbl = Label(window, text="Nome")
 lbl.grid(column=0, row=0)
 txtNome = Entry(window,width=10)
