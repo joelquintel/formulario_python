@@ -10,26 +10,23 @@ class Pessoas:
         self.encoding = encoding
         self.documents = self.read_json()
 
+    def create_json_if_not_exist(self):
+        arquivo = os_path.isfile(f'./{self.path_file}')
+        create = self.path_file
+        if arquivo:
+            pass
+            #print('existe')
+        else:
+            with open(create, 'w') as arq:
+                dados = json.dumps([])
+                arq.write(dados)
+            #print('não existe')
+
     def get_documents(self) -> list:
         return self.documents
 
     def set_documents(self, document) -> None:
         return self.documents.append(document)
-
-    def create_empty_json(self):
-        arquivo = os_path.exists(self.path_file)
-        print(arquivo)
-        # if not os_path.exists(self.path_file):
-        #     with open(self.path_file, 'w') as arquivo:
-        #         arquivo.write(json.dumps([]))
-        #     print('>>>>>> criado.')
-                
-        # else:
-        #     print(f'The {self.path_file} file exists.')
-        
-        # if not os_path.isfile(self.path_file) :
-        #     with open(self.path_file, 'w', encoding=self.encoding) as arquivo:
-        #         json.dump(self.path_file, arquivo, ensure_ascii=False)
 
     def read_json(self) -> list:
 
@@ -81,7 +78,7 @@ if __name__ == "__main__":
             listaCadastro.update({"nome":nomeCd,"telefone":telefoneCd,"uf":ufCd})
             #salvando no arquivo json
             pessoas = Pessoas(os_path.abspath("./pessoas.json"), 'UTF-8')
-            pessoas.create_empty_json()
+            pessoas.create_json_if_not_exist()
             pessoas.write_json(listaCadastro)
             print(pessoas.get_documents())
 
