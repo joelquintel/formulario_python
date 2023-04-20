@@ -11,3 +11,11 @@ Após a instalação de bibliotecas no projeto, favor atualizar arquivo requirem
 pip freeze | findstr "autopep8 pylint" > requirements.txt
 
 ```
+
+Instalando bibliotecas
+
+```cmd
+
+pip install -r requirements.txt
+
+```
