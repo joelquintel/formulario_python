@@ -2,10 +2,10 @@ from model.exemplo2 import Pessoas
 import tkinter as tk
 # ctrl + k + f 
 
-class CadastroView(Pessoas):
+class CadastroView():
     def __init__(self, window) -> None:
         # herança da class Pessoas
-        super().__init__()
+        #super().__init__()
         # Nome
         lbl = tk.Label(window, text="Nome:").grid(column=0, row=0)
         self.txtNome = tk.Entry(window, width=10)
