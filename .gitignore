@@ -1,3 +1,5 @@
 # ambiente
 env_formulario/
-.vscode
+
+# dados
+pessoas.json
