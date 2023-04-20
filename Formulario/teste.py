@@ -1,37 +1,36 @@
+from tkinter import *
 
-#n = int(input("digite n:6 "))
-#i = int(input("digite n:2 "))
-#j = input("digite n:3 ")
+window = Tk()
 
-#while n:
- #   n = int(input("digite n:6 "))
+window.title("Welcome to LikeGeeks app")
 
-#for numero in n,i,j:
-#    if numero != 0:
-#        print(numero)
+window.geometry('600x600')
 
-import json
-import shutil
-import tempfile
-from model.cadastro import Cadastro
+lbl = Label(window, text="Hello")
+
+lbl.grid(column=0, row=0)
+
+txt = Entry(window,width=10)
+
+txt.grid(column=1, row=0)
+
+lbl2 = Label(window, text="Hello")
+
+lbl2.grid(column=5, row=0)
+
+txt2 = Entry(window,width=10)
+
+txt2.grid(column=7, row=0)
 
 
-cadastroPessoas = Cadastro(id="8",nome="carlos",telefone="4774-4774")
-#print(cadastroPessoas.getNome())
-#print(cadastroPessoas.getTelefone())
+def clicked():
 
-lista ={"alberto":199}
-#lista.update(nome =j)
+    res = "Welcome to " + txt.get()
 
-dic= {"id":cadastroPessoas.getId(),"Nome":cadastroPessoas.getNome(),"Telefone:":cadastroPessoas.getTelefone()}
-dic.update(id = cadastroPessoas.getId(),nome =cadastroPessoas.getNome(),telefone=cadastroPessoas.getTelefone())
+    lbl.configure(text= res)
 
-for item in lista.items():
- chave,valor =item
- with open('cadastroPessoas.json','a') as f:
-  f.seek(0)
+btn = Button(window, text="Click Me", command=clicked)
 
-  json.dump(dic,f,separators=(',',':'))
- f.truncate()
- print(item)
+btn.grid(column=2, row=15)
 
+window.mainloop()
