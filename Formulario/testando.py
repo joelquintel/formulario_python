@@ -1,5 +1,3 @@
-import json
-import os.path as os_path
 from infrastructure.testando2 import Infrastructure
 class Pessoas(Infrastructure):
     def __init__(self):
