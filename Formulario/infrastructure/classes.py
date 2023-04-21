@@ -17,3 +17,9 @@ class Infrastructure:
                 dados = json.dumps([])
                 arq.write(dados)
             print('arquivo criado')
+
+
+class Pessoas(Infrastructure):
+    def __init__(self):
+        super().__init__()
+        

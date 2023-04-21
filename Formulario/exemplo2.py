@@ -10,18 +10,6 @@ class Pessoas:
         self.encoding = encoding
         self.documents = self.read_json()
 
-    def create_json_if_not_exist(self):
-        arquivo = os_path.isfile(f'./{self.path_file}')
-        create = self.path_file
-        if arquivo:
-            pass
-            #print('existe')
-        else:
-            with open(create, 'w') as arq:
-                dados = json.dumps([])
-                arq.write(dados)
-            #print('não existe')
-
     def get_documents(self) -> list:
         return self.documents
 

@@ -1,11 +1,4 @@
-from infrastructure.testando2 import Infrastructure
-class Pessoas(Infrastructure):
-    def __init__(self):
-        super().__init__()
-        
-    def funciona(self):
-        print('funciona')
-
+from infrastructure.classes import Infrastructure, Pessoas
 
 if __name__ == '__main__':
     arquivo = Pessoas()
