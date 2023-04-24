@@ -8,7 +8,7 @@ Após a instalação de bibliotecas no projeto, favor atualizar arquivo requirem
 
 ```cmd
 
-pip freeze | findstr "autopep8 pylint" > requirements.txt
+pip freeze | findstr "autopep8 pylint pillow" > requirements.txt
 
 ```
 

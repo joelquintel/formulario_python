@@ -1,6 +1,6 @@
 from tkinter import *
 import os
-#from view.cadastroView import CadastroView
+from PIL import ImageTk, Image  
 from view.menu import Menu
 if __name__ == "__main__":
 
@@ -11,11 +11,11 @@ if __name__ == "__main__":
         width= menu.winfo_screenwidth()
         height= menu.winfo_screenheight()
         menu.geometry("%dx%d" % (width, height))
-       # menu.resizable(False,False)
+        menu.resizable(False,False)
 
-        
-        imgBG = PhotoImage(file=pastaImg+"\\view\\img\\bg_menu.png",width=width,height=height)
-        labelBG = Label(menu,image = imgBG,width=width,height=height)
+        image1 = Image.open("Formulario/view/img/bg_menu.png").resize((1367,720))
+        imgBG = ImageTk.PhotoImage(image1)
+        labelBG = Label(menu,image = imgBG)
         labelBG.pack()
         Menu(menu)
         
