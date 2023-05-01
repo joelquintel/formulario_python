@@ -21,7 +21,7 @@ class Menu():
         height= window.winfo_screenheight()
         window.geometry("%dx%d" % (width, height))
         window.title("Cadastro")
-        image1 = Image.open("Formulario/view/img/bg_cadastro.png").resize((1367,720))
+        #image1 = Image.open("Formulario/view/img/bg_cadastro.png").resize((1367,720))
         #imgBG = ImageTk.PhotoImage(image1)
         #labelBG =  menuTK.Label(window,image = imgBG)
         #labelBG.pack()
