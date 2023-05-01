@@ -1,15 +1,13 @@
-from model.exemplo2 import Pessoas
-from model.cadastro import Cadastro
+from gptoca import Agenda
 import tkinter as tk
 import os.path as os_path
 
 # ctrl + k + f 
 
-class CadastroView(Pessoas,Cadastro):
-    def __init__(self, window,path_file, encoding,id,nome,telefone) -> None:
+class CadastroView(Agenda):
+    def __init__(self, window,nome_arquivo) -> None:
         #herança da class Pessoas e Cadastro
-        super().__init__(path_file, encoding,id,nome,telefone)
-        
+        super().__init__(nome_arquivo)
         # Nome
         self.lbl = tk.Label(window, text="Nome:").grid(column=0, row=0)
         self.txtNome = tk.Entry(window, width=10)
@@ -27,7 +25,7 @@ class CadastroView(Pessoas,Cadastro):
         btn = tk.Button(window, text="Cadastrar", command=self.clicked)
 
         btn.grid(column=15, row=25)
-    listaCadastro = {}
+    #listaCadastro = {}
     def clicked(self):
         # pega os valores inserido no input do formulario
         nomeCd = self.txtNome.get()
@@ -36,12 +34,10 @@ class CadastroView(Pessoas,Cadastro):
 
         print(nomeCd)
         #inserindo novos dados no lista de dicionarios
-        listaCadastro.update({"nome":nomeCd,"telefone":telefoneCd,"uf":ufCd})
+        # listaCadastro.update({"nome":nomeCd,"telefone":telefoneCd,"uf":ufCd})
         #salvando no arquivo json
-        pessoas = Pessoas.__init__(os_path.abspath("./pessoas.json"), 'UTF-8')
-        pessoas.create_json_if_not_exist()
-        pessoas.write_json(listaCadastro)
-        print(pessoas.get_documents())     
+        CadastroView.adicionar_contato(self,nome=nomeCd,telefone=telefoneCd)
+      
    
         # inserindo novos dados no lista de dicionarios
         # listaCadastro.update({"nome":nomeCd,"telefone":telefoneCd,"uf":ufCd.swapcase()})
