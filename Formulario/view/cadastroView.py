@@ -7,7 +7,7 @@ class CadastroView():
         # herança da class Pessoas
         #super().__init__()
         # Nome
-        lbl = tk.Label(window, text="Nome:").grid(column=0, row=0)
+        self.lbl = tk.Label(window, text="Nome:").grid(column=0, row=0)
         self.txtNome = tk.Entry(window, width=10)
         self.txtNome.grid(column=1, row=0)
         # Telefone

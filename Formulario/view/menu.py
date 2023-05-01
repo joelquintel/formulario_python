@@ -2,6 +2,7 @@ import tkinter as menuTK
 from view.cadastroView import CadastroView
 from view.deleteCadastroView import DeleteCadastro
 import os
+from PIL import ImageTk, Image  
 
 class Menu():
     def __init__(self, menu) -> None:
@@ -20,6 +21,14 @@ class Menu():
         height= window.winfo_screenheight()
         window.geometry("%dx%d" % (width, height))
         window.title("Cadastro")
+        image1 = Image.open("Formulario/view/img/bg_cadastro.png").resize((1367,720))
+        #imgBG = ImageTk.PhotoImage(image1)
+        #labelBG =  menuTK.Label(window,image = imgBG)
+        #labelBG.pack()
+        #canvas = menuTK.Canvas(window, width=1367,height=720)
+        #canvas.pack()
+        #imgBG = ImageTk.PhotoImage(image1)
+        #canvas.create_image(1367,720,image=imgBG)
         CadastroView(window)
     
     def deleteCadastro(self):
@@ -29,9 +38,6 @@ class Menu():
         window.geometry("%dx%d" % (width, height))
         window.title("Delete")
         DeleteCadastro(window)
-        #canvas = menuTK.Canvas(window, width=1080,height=600)
-        #canvas.pack()
-        #imgBG = menuTK.PhotoImage(file=pastaImg+"\\img\\bg_cadastro.png")
-        #canvas.create_image(10,10,image=imgBG)
+      
        
         
