@@ -18,16 +18,7 @@ if __name__ == "__main__":
         labelBG = Label(menu,image = imgBG)
         labelBG.pack()
         Menu(menu)
-        
-        
-
-     
-
-     
-
-      
-        
-
+    
        # telefones = [{"nome": "Isabela Simone Corte Real",
                    # "telefone": "(94) 98550-6067", "estado": "PA"}]
         
