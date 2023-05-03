@@ -1,8 +1,8 @@
-# Projeto cadastro Tkinter
+# Agenda de Contatos em Tkinter
 
 [![Python 3.11.3](https://img.shields.io/badge/python-3.11.3-green.svg)](https://www.python.org/downloads/release/python-3113/)
 
-Crud com python formulario Tkinter
+Projeto de estudo para cadastro de  contatos desenvolvido em Tkinter.
 
 ## Atualizando requirements
 
@@ -14,7 +14,7 @@ pip freeze | findstr "autopep8 pylint, pillow" > requirements.txt
 
 ```
 
-Instalando bibliotecas
+## Instalando bibliotecas
 
 ```cmd
 
@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ```
 
-Executando projeto
+## Executando projeto
 
 ```cmd
 
