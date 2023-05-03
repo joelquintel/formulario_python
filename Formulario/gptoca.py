@@ -40,8 +40,11 @@ class Agenda:
         del self.contatos[indice]
         self.salvar_contatos()
 
-lista_telefônica = Agenda('pessoas.json')
+if __name__ == "__main__":
 
-#print(lista_telefônica._verificar_arquivo())
-lista_telefônica.carregar_contatos()
-print(lista_telefônica.contatos)
+    lista_telefônica = Agenda('pessoas.json')
+
+    #print(lista_telefônica._verificar_arquivo())
+    lista_telefônica.carregar_contatos()
+
+    print(lista_telefônica.contatos)
