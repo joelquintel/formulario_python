@@ -12,3 +12,5 @@ maintainers = [
 ]
 
 repository = "https://github.com/joelquintel/formulario_python"
+
+bg_menu = "Formulario/view/img/bg_menu.png"
