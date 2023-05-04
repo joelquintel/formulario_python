@@ -22,23 +22,38 @@ class Phone_book:
                     return []
         else:
             return []
+    
+    def get_dados(self):
+        return self.dados
+
+    def set_dados(self, dados):
+        self.dados.append(dados)
 
     def novo_contato(self, nome, telefone):
-        novo = {"nome":nome, "telefone":telefone}
-        self.dados.append(novo)
-        # with open(self.nome_arquivo, 'w', encoding=self.encode) as arquivo:
-        #     json.dump(self.dados(), arquivo)
+        self.set_dados({"nome":nome, "telefone":telefone})
 
     def write_on_file(self):
         with open(self.nome_arquivo, 'w', encoding=self.encode) as arquivo:
             json.dump(self.dados, arquivo)
+
+    def check_telefone(self, nome, telefone):
+        for dicionario in self.get_dados():
+
+            if telefone in dicionario['telefone']:
+                print('telefone já existe na agenda.')
+                continue
+
+            self.set_dados({"nome":nome, "telefone":telefone})
+            print('contato adicionado.')
 
 if __name__ == "__main__":
     try:
         agenda = Phone_book()
         agenda.verificar_arquivo()
         agenda.novo_contato("josué", "1515-1515")
-        print(agenda.dados)
-        agenda.write_on_file()
+        agenda.novo_contato("paulo", "1212-1212")
+        #print(agenda.dados)
+        agenda.check_telefone("paulo","1212-1212")
+        #agenda.write_on_file()
     except Exception as e:
         print(e)
