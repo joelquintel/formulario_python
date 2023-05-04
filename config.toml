@@ -11,6 +11,6 @@ maintainers = [
     "Rodrigo Silva <rodrigmars@gmail.com>",
 ]
 
-repository = "https://github.com/joelquintel/formulario_python"
+# repository = "https://github.com/joelquintel/formulario_python"
 
 bg_menu = "Formulario/view/img/bg_menu.png"
