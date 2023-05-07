@@ -1,0 +1,16 @@
+version = "1.0.0"
+name = "agenda_contatos"
+description = "Cadastro de telefones"
+license = "MIT"
+authors = [
+    "Joel <>",
+]
+
+maintainers = [
+    "John Smith <>",
+    "Rodrigo Silva <rodrigmars@gmail.com>",
+]
+
+# repository = "https://github.com/joelquintel/formulario_python"
+
+bg_menu = "Formulario/view/img/bg_menu.png"
