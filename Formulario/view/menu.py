@@ -30,7 +30,8 @@ class Menu():
         #canvas.pack()
         #imgBG = ImageTk.PhotoImage(image1)
         #canvas.create_image(1367,720,image=imgBG)
-        CadastroView(window,"pessoas.json")
+        #adicionar o frame python para telas.
+        CadastroView(window)
     
     def deleteCadastro(self):
         window = menuTK.Toplevel()
